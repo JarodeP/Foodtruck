@@ -1,0 +1,412 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #f8b500;
+    --dark-color: #2f2f2f;
+    --light-color: #ffffff;
+    --text-color: #333333;
+    --spacing: 2rem;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add smooth scrolling to the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    
+}
+
+h1, h2, h3 {
+    font-family: 'Lobster';
+    color: var(--dark-color);
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--spacing);
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/pizza-bg.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing);
+    color: var(--light-color);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Add parallax class for sections */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style specific parallax sections */
+#a-propos {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                      url('images/pizza-1.jpg');
+    color: var(--light-color);
+}
+
+#menu {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                      url('images/pizza-2.jpg');
+    color: var(--light-color);
+}
+
+#contact {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                      url('images/guitard-bg.jpg');
+    color: var(--light-color);
+}
+
+/* Content overlays for parallax sections */
+.section-content {
+    padding: var(--spacing);
+    background: rgba(255, 255, 255, 0.9);
+    margin: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--light-color);
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.btn.secondary {
+    background: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* Content Sections */
+section {
+    padding: var(--spacing);
+    margin: 2rem 0;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.menu-item {
+    background: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-item-content {
+    padding: 1.5rem;
+}
+
+.menu-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.price {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal proportions */
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
+.about-text {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.chef-image {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-left: 150px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.menu-grid.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.menu-item {
+    flex: 0 0 300px;
+    margin-right: 2rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary-color);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+.carousel-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.carousel-btn:disabled:hover {
+    background: #ccc;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: var(--spacing);
+    text-align: center;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--light-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.contact-form button {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .contact-form {
+        padding: 0 1rem;
+    }
+    .map-container {
+        height: 350px;
+        margin: 1rem auto;
+    }
+    .contact-form button {
+        width: 100%;
+        align-self: stretch;
+    }
+    .menu-item {
+        flex: 0 0 280px;
+    }
+}
