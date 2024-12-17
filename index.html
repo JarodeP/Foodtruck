@@ -11,21 +11,24 @@
     <header>
         <nav class="main-nav">
             <div class="logo">Pizza Truck</div>
+            <div class="language-switcher">
+                <button onclick="toggleLanguage()" id="langToggle">🇬🇧 EN</button>
+            </div>
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#localisation">Où nous trouver</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-lang="nav-home">Accueil</a></li>
+                <li><a href="#a-propos" data-lang="nav-about">À propos</a></li>
+                <li><a href="#menu" data-lang="nav-menu">Menu</a></li>
+                <li><a href="#localisation" data-lang="nav-location">Où nous trouver</a></li>
+                <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
             </ul>
         </nav>
         
         <section class="hero">
-            <h1>Des pizzas artisanales, où que vous soyez !</h1>
-            <p>Découvrez nos délicieuses pizzas préparées avec des ingrédients frais et locaux</p>
+            <h1 data-lang="hero-title">Des pizzas artisanales, où que vous soyez !</h1>
+            <p data-lang="hero-subtitle">Découvrez nos délicieuses pizzas préparées avec des ingrédients frais et locaux</p>
             <div class="cta-buttons">
-                <a href="#localisation" class="btn primary">Localisez-nous</a>
-                <a href="commande.html" class="btn secondary">Commander</a>
+                <a href="#localisation" class="btn primary" data-lang="btn-locate">Localisez-nous</a>
+                <a href="commande.html" class="btn secondary" data-lang="btn-order">Commander</a>
             </div>
         </section>
     </header>
@@ -33,11 +36,11 @@
     <main>
         <section id="a-propos" class="about parallax">
             <div class="section-content">
-                <h2>Notre Histoire</h2>
+                <h2 data-lang="about-title">Notre Histoire</h2>
                 <div class="about-content">
                     <img src="images/chef.png" alt="Notre chef" class="chef-image" height="250px" width="auto">
                     <div class="about-text">
-                        <p>Je suis Marco, passionné de pizza et de voyages. Avec mon Pizz'Truck, j’ai voulu réunir mes deux amours : la cuisine italienne authentique et la liberté de parcourir les routes. Chaque jour, je prépare des pizzas avec des ingrédients frais et des saveurs inspirées de mes aventures. Mon objectif ? Apporter un peu d’Italie et beaucoup de convivialité directement jusqu’à vous.</p>
+                        <p data-lang="about-text">Je suis Marco, passionné de pizza et de voyages. Avec mon Pizz'Truck, j’ai voulu réunir mes deux amours : la cuisine italienne authentique et la liberté de parcourir les routes. Chaque jour, je prépare des pizzas avec des ingrédients frais et des saveurs inspirées de mes aventures. Mon objectif ? Apporter un peu d’Italie et beaucoup de convivialité directement jusqu’à vous.</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +48,7 @@
 
         <section id="menu" class="menu parallax">
             <div class="section-content">
-                <h2>Nos Menus</h2>
+                <h2 data-lang="menu-title">Nos Menus</h2>
                 <div class="carousel-container">
                     <button class="carousel-btn prev">&lt;</button>
                     <div class="menu-grid carousel">
@@ -56,7 +59,7 @@
         </section>
 
         <section id="localisation" class="location">
-            <h2>Où nous trouver</h2>
+            <h2 data-lang="location-title">Où nous trouver</h2>
             <div id="map" class="map-container">
                 <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41763.95435754614!2d1.0648385895507168!3d49.44321598139561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de1c3b04af1d%3A0x5a9d7dcd20b6b04a!2sRouen!5e0!3m2!1sfr!2sfr!4v1710344774961!5m2!1sfr!2sfr"
@@ -72,19 +75,19 @@
 
         <section id="contact" class="contact parallax">
             <div class="section-content">
-                <h2>Contactez-nous</h2>
+                <h2 data-lang="contact-title">Contactez-nous</h2>
                 
                 <form class="contact-form">
-                    <label for="name">Nom:</label>
+                    <label for="name" data-lang="contact-name">Nom:</label>
                     <input type="text" id="name" name="name" required>
                     
-                    <label for="email">Email:</label>
+                    <label for="email" data-lang="contact-email">Email:</label>
                     <input type="email" id="email" name="email" required>
                     
-                    <label for="message">Message:</label>
+                    <label for="message" data-lang="contact-message">Message:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                     
-                <button type="submit" class="btn primary">Envoyer</button>
+                <button type="submit" class="btn primary" data-lang="contact-send">Envoyer</button>
                 </form>
                 
                 <div class="social-links">
@@ -96,10 +99,12 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Pizza Food Truck. Tous droits réservés.</p>
+            <p data-lang="footer-text">&copy; 2024 Pizza Food Truck. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script src="menu.js"></script>
+    <script src="translations.js"></script>
+    <script src="language-switcher.js"></script>
 </body>
 </html>
